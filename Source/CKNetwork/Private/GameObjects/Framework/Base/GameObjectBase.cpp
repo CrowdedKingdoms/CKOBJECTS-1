@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "GameObjects/Framework/Base/GameObjectBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/GameObjectBase.h"
 
 
 // Sets default values

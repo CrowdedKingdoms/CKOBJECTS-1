@@ -1,5 +1,5 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
-#include "Network/Infrastructure//MessageBufferPoolSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Infrastructure//MessageBufferPoolSubsystem.h"
 
 DEFINE_LOG_CATEGORY(BufferPoolLog)
 

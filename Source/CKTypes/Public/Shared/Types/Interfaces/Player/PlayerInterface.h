@@ -16,7 +16,7 @@ class UPlayerInterface : public UInterface
 /**
  * 
  */
-class CROWDEDKINGDOMS_API IPlayerInterface
+class IPlayerInterface
 {
 	GENERATED_BODY()
 

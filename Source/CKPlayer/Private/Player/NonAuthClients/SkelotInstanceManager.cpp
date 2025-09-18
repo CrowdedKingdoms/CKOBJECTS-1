@@ -1,6 +1,6 @@
 #include "Player/NonAuthClients/SkelotInstanceManager.h"
-#include "Voxels/Core/VoxelWorldSubsystem.h"
-#include "Network/Services/GameData/ActorServiceSubsystem.h"
+#include "CKVoxelSystem/Public/Voxels/Core/VoxelWorldSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/ActorServiceSubsystem.h"
 
 
 // Sets default values

@@ -13,7 +13,7 @@
 class AGameObjectsManager;
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API AActivatorBase : public AActor, public IActivatable, public IOriginRebasable
+class AActivatorBase : public AActor, public IActivatable, public IOriginRebasable
 {
 	GENERATED_BODY()
 

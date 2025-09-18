@@ -16,7 +16,7 @@ class UMinimapWidgetInterface : public UInterface
 /**
  * 
  */
-class CROWDEDKINGDOMS_API IMinimapWidgetInterface
+class IMinimapWidgetInterface
 {
 	GENERATED_BODY()
 

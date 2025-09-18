@@ -59,7 +59,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnOriginRebased);
  * Class that manages voxel chunks of the world
  */
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UVoxelWorldSubsystem : public UWorldSubsystem
+class UVoxelWorldSubsystem : public UWorldSubsystem
 {
 	GENERATED_BODY()
 	

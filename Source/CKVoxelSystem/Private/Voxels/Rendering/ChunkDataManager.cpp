@@ -1,7 +1,7 @@
 #include "Voxels/Rendering/ChunkDataManager.h"
 #include "Async/Async.h"
-#include "Network/Services/GameData/ChunkServiceSubsystem.h"
-#include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
 #include "Voxels/Core/VoxelWorldSubsystem.h"
 
 DEFINE_LOG_CATEGORY(LogChunkLoader);

@@ -1,6 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
-#include "Audio/VoiceChat/VoiceChatWorldSubsystem.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/VoiceChatWorldSubsystem.h"
+
+#include "CKNetwork/Pubilc/Audio/Platform/WindowsAudioDeviceMonitor.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/CircularAudioBuffer.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/Structures/FAudioTrack.h"
 #include "Engine/Engine.h"
+#include "Generators/AudioGenerator.h"
+#include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 
 DEFINE_LOG_CATEGORY(LogVoiceChat);
 

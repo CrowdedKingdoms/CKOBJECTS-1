@@ -5,7 +5,7 @@
 #include "SkelotAnimCollection.h"
 #include "SkelotWorld.h"
 #include "SkelotUtils.h"
-#include "Shared/Types/Structures/Actors/FActorState.h"
+#include "CKTypes/Public/Shared/Types/Structures/Actors/FActorState.h"
 #include "Templates/SharedPointer.h"
 #include "SkelotInstanceManager.generated.h"
 
@@ -166,7 +166,7 @@ struct FLocalInstanceData
 
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API ASkelotInstanceManager : public AActor
+class ASkelotInstanceManager : public AActor
 {
 	GENERATED_BODY()
 

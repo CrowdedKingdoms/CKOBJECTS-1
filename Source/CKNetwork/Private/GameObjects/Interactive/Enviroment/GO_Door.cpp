@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "GameObjects/Interactive/Enviroment/GO_Door.h"
+#include "CKNetwork/Pubilc//GameObjects/Interactive/Enviroment/GO_Door.h"
 #include "Components/InstancedStaticMeshComponent.h"
 
 

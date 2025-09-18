@@ -23,7 +23,7 @@ class UOriginRebasable : public UInterface
  * Any class implementing this interface should define the necessary logic
  * for rebasing their origin or related operations.
  */
-class CROWDEDKINGDOMS_API IOriginRebasable
+class IOriginRebasable
 {
 	GENERATED_BODY()
 

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GameObjects/Interactive/Enviroment/GO_Light.h"
+#include "CKNetwork/Pubilc/GameObjects/Interactive/Enviroment/GO_Light.h"
 
 #include "Components/LightComponent.h"
 #include "Components/PointLightComponent.h"

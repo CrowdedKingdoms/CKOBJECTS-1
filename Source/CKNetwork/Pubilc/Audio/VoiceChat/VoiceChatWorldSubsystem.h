@@ -3,10 +3,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "AudioCapture.h"
-#include "Audio/VoiceChat/CircularAudioBuffer.h"
-#include "Audio/Platform/WindowsAudioDeviceMonitor.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/CircularAudioBuffer.h"
+#include "CKNetwork/Pubilc/Audio/Platform/WindowsAudioDeviceMonitor.h"
 #include "samplerate.h"
-#include "Audio/VoiceChat/Structures/FAudioTrack.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/Structures/FAudioTrack.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 #include "VoiceChatWorldSubsystem.generated.h"
 
@@ -22,7 +22,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnStreamTimeout, const FString&, UU
  * for multiple users in a networked environment
  */
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UVoiceChatWorldSubsystem : public UTickableWorldSubsystem, public ISubsystemInitializable
+class UVoiceChatWorldSubsystem : public UTickableWorldSubsystem, public ISubsystemInitializable
 {
     GENERATED_BODY()
     

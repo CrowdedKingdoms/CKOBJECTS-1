@@ -16,7 +16,7 @@ DECLARE_LOG_CATEGORY_EXTERN(BufferPoolLog, Log, All);
  */
 
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API UMessageBufferPoolSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class  UMessageBufferPoolSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

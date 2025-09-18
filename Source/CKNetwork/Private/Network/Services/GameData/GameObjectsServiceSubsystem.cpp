@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Network/Services/GameData/GameObjectsServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/GameObjectsServiceSubsystem.h"
 
-#include "FunctionLibraries/Network/FL_Serialization.h"
-#include "GameObjects/Framework/Management/GameObjectsManager.h"
-#include "Network/Services/Core/UDPSubsystem.h"
+#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Management/GameObjectsManager.h"
+#include "CKNetwork/Pubilc/Network/Services/Core/UDPSubsystem.h"
 #include "Shared/Types/Core/GameSessionSubsystem.h"
 #include "Shared/Types/Enums/Events/EEventType.h"
 

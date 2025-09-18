@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameObjects/Framework/Base/GameObjectBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/GameObjectBase.h"
 #include "GO_Light.generated.h"
 
 UCLASS()
-class CROWDEDKINGDOMS_API AGO_Light : public AGameObjectBase
+class  AGO_Light : public AGameObjectBase
 {
 	GENERATED_BODY()
 

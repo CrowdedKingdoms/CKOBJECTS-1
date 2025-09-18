@@ -1,5 +1,5 @@
-#include "GameObjects/Placeable/PlaceableObjectManager.h"
-#include "Voxels/Core/VoxelChunk.h"
+#include "CKNetwork/Pubilc/GameObjects/Placeable/PlaceableObjectManager.h"
+#include "CKVoxelSystem/Public/Voxels/Core/VoxelChunk.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/SceneComponent.h"

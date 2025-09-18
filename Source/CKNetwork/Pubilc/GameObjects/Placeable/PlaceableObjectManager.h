@@ -3,7 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/InstancedStaticMeshComponent.h"
-#include "Voxels/Core/VoxelChunk.h"
+#include "CKVoxelSystem/Public/Voxels/Core/VoxelChunk.h"
 #include "Shared/Types/Interfaces/World/OriginRebasable.h"
 #include "PlaceableDefs.h"
 #include "PlaceableObjectManager.generated.h"
@@ -17,7 +17,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogPlaceableManager, Log, All);
  * - Pools HISM components per StaticMesh for efficient instancing.
  */
 UCLASS(Blueprintable)
-class CROWDEDKINGDOMS_API APlaceableObjectManager : public AActor
+class APlaceableObjectManager : public AActor
 {
 	GENERATED_BODY()
 

@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Components/TimelineComponent.h"
-#include "GameObjects/Framework/Base/GameObjectBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/GameObjectBase.h"
 #include "GO_Door.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnDoorClosed);
 
 UCLASS()
-class CROWDEDKINGDOMS_API AGO_Door : public AGameObjectBase
+class AGO_Door : public AGameObjectBase
 {
 	GENERATED_BODY()
 

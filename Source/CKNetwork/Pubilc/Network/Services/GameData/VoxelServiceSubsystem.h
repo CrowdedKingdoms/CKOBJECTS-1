@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
-#include "Shared/Types/Structures/Voxels/FVoxelListItem.h"
+#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelListItem.h"
 #include "Shared/Types/Structures/Voxels/FVoxelState.h"
 #include "VoxelServiceSubsystem.generated.h"
 
@@ -27,7 +27,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_FiveParams(FOnVoxelList, bool, bSuccess, int6
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_NineParams(FOnNewVoxelUpdateNotify, int64, Cx, int64, Cy, int64, Cz, int32, Vx, int32, Vy, int32, Vz, uint8, VoxelType, FVoxelState, VoxelState, bool, bHasState);
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UVoxelServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UVoxelServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

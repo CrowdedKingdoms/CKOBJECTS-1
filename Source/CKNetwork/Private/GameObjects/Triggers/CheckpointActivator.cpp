@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GameObjects/Triggers/CheckpointActivator.h"
+#include "CKNetwork/Pubilc/GameObjects/Triggers/CheckpointActivator.h"
 
 // Sets default values
 ACheckpointActivator::ACheckpointActivator()

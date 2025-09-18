@@ -1,4 +1,4 @@
-#include "GameObjects/Interactive/Enviroment/GO_RotatingRod.h"
+#include "CKNetwork/Pubilc/GameObjects/Interactive/Enviroment/GO_RotatingRod.h"
 #include "Components/StaticMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 

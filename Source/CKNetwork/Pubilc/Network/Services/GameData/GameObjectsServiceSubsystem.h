@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
-#include "Shared/Types/Structures/GameObjects/FGameObjectState.h"
-#include "Shared/Types/Structures/Events/FBaseEventState.h"
+#include "CKTypes/Public/Shared/Types/Structures/GameObjects/FGameObjectState.h"
+#include "CKTypes/Public/Shared/Types/Structures/Events/FBaseEventState.h"
 #include "GameObjectsServiceSubsystem.generated.h"
 
 class AGameObjectsManager;
@@ -17,7 +17,7 @@ class UGameSessionSubsystem;
  * Used to handling GameObject Requests and responses
  */
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UGameObjectsServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UGameObjectsServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

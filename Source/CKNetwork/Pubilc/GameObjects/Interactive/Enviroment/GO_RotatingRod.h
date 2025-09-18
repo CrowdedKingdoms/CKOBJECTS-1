@@ -1,11 +1,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameObjects/Framework/Base/GameObjectBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/GameObjectBase.h"
 #include "GO_RotatingRod.generated.h"
 
 UCLASS()
-class CROWDEDKINGDOMS_API AGO_RotatingRod : public AGameObjectBase
+class AGO_RotatingRod : public AGameObjectBase
 {
 	GENERATED_BODY()
 

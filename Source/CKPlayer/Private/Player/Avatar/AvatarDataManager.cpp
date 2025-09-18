@@ -3,8 +3,8 @@
 
 #include "Player/Avatar/AvatarDataManager.h"
 #include "Blueprint/UserWidget.h"
-#include "Network/GraphQL/GraphQLQuery.h"
-#include "Network/GraphQL/GraphQLService.h"
+#include "CKNetwork/Pubilc/Network/GraphQL/GraphQLQuery.h"
+#include "CKNetwork/Pubilc/Network/GraphQL/GraphQLService.h"
 #include "Shared/Types/Interfaces/Avatar/AvatarNotificationInterface.h"
 #include "Shared/Types/Structures/Avatar/FAvatarMetadata.h"
 #include "Shared/Types/Structures/Avatar/FColorSlotsSaveData.h"

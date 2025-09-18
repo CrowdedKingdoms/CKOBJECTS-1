@@ -1,15 +1,15 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
-#include "Network/Infrastructure/NetworkMessageParser.h"
-#include "Shared/Types/Enums/Network/MessageType.h"
+#include "CKNetwork/Pubilc/Network/Infrastructure/NetworkMessageParser.h"
+#include "CKTypes/Public/Shared/Types/Enums/Network/MessageType.h"
 #include "Engine/World.h"
-#include "Network/Services/GameData/GameObjectsServiceSubsystem.h"
-#include "Network/Infrastructure/MessageBufferPoolSubsystem.h"
-#include "Network/Services/GameData/ActorServiceSubsystem.h"
-#include "Network/Services/GameData/ChunkServiceSubsystem.h"
-#include "Network/Services/GameData/VoxelServiceSubsystem.h"
-#include "Network/Services/Communication/TextChatServiceSubsystem.h"
-#include "Network/Services/Communication/VoiceChatServiceSubsystem.h"
-#include "Network/Services/User/UserServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/GameObjectsServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Infrastructure/MessageBufferPoolSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/ActorServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/Communication/TextChatServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/Communication/VoiceChatServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/User/UserServiceSubsystem.h"
 
 DEFINE_LOG_CATEGORY(NetworkMessageParser);
 

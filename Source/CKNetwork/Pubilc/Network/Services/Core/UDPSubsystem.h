@@ -3,7 +3,7 @@
 #include <chrono>
 
 #include "CoreMinimal.h"
-#include "Shared/Types/Enums/Network/MessageType.h"
+#include "CKTypes/Public/Shared/Types/Enums/Network/MessageType.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 #include "UObject/Object.h"
 #include "UDPSubsystem.generated.h"
@@ -38,7 +38,7 @@ struct FUDPNetworkStats
 
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UUDPSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UUDPSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

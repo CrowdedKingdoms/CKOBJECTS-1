@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Audio/VoiceChat/CircularAudioBuffer.h"
+#include "CKNetwork/Pubilc/Audio/VoiceChat/CircularAudioBuffer.h"
 #include "Components/AudioComponent.h"
 #include "Sound/SoundWaveProcedural.h"
 #include "UObject/WeakObjectPtr.h"

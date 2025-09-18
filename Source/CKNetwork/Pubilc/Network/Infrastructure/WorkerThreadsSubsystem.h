@@ -19,7 +19,7 @@ DECLARE_LOG_CATEGORY_EXTERN(ThreadPoolLog, Log, All);
  * This class manages Thread Pools for worker functions to perform tasks.
  */
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API UWorkerThreadsSubsystem : public UGameInstanceSubsystem, public  ISubsystemInitializable
+class UWorkerThreadsSubsystem : public UGameInstanceSubsystem, public  ISubsystemInitializable
 {
 	GENERATED_BODY()
 public:

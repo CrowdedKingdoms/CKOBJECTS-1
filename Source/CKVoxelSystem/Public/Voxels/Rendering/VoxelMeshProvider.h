@@ -10,7 +10,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(LogVoxelMeshProvider, Log, All);
 
 UCLASS()
-class CROWDEDKINGDOMS_API UVoxelMeshProvider : public UBlueprintFunctionLibrary
+class UVoxelMeshProvider : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 

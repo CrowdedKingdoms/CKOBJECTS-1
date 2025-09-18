@@ -39,7 +39,7 @@ struct FCDNStats
 };
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UCDNServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UCDNServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

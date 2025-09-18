@@ -7,9 +7,9 @@
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "Engine/Engine.h"
 #include "Http.h"
-#include "Network//GraphQL/GraphQLQueryDatabase.h"
+#include "CKNetwork/Pubilc/Network//GraphQL/GraphQLQueryDatabase.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
-#include "Shared/Types/Structures/Versioning/FGameVersion.h"
+#include "CKTypes/Public/Shared/Types/Structures/Versioning/FGameVersion.h"
 #include "GraphQLService.generated.h"
 
 class AAvatarDataManager;
@@ -27,7 +27,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnTeleportResponse, bool, bTeleport
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnGetVersionInfo, FGameVersion, ServerVersion, FGameVersion, ClientVersion);
 
 USTRUCT(BlueprintType)
-struct CROWDEDKINGDOMS_API FGraphQLStats
+struct FGraphQLStats
 {
 	GENERATED_BODY()
 
@@ -61,7 +61,7 @@ struct CROWDEDKINGDOMS_API FGraphQLStats
  */
 
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API UGraphQLService : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UGraphQLService : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

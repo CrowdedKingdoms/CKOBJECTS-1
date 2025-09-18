@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/BoxComponent.h"
-#include "GameObjects/Triggers/CheckpointActivator.h"
-#include "GameObjects/Framework/Base/GameObjectBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Triggers/CheckpointActivator.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/GameObjectBase.h"
 #include "GO_Checkpoint.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCheckpointCrossed, bool, bFinish);
@@ -15,7 +15,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCheckpointActivated, AGO_Checkpoi
  * 
  */
 UCLASS()
-class CROWDEDKINGDOMS_API AGO_Checkpoint : public AGameObjectBase
+class AGO_Checkpoint : public AGameObjectBase
 {
 	GENERATED_BODY()
 

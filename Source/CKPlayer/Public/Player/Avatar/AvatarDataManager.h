@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Shared/Types/Structures/Avatar/FColorSlotsSaveData.h"
+#include "CKTypes/Public/Shared/Types/Structures/Avatar/FColorSlotsSaveData.h"
 #include "AvatarDataManager.generated.h"
 
 class UGraphQLService;
@@ -13,7 +13,7 @@ class UUserWidget;
 DEFINE_LOG_CATEGORY_STATIC(LogAvatarService, Log, All);
 
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API AAvatarDataManager : public AActor
+class AAvatarDataManager : public AActor
 {
 	GENERATED_BODY()
 

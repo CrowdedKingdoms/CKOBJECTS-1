@@ -8,7 +8,7 @@ public class CKTypes : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine",  "CKSharedTypes", "CKPlayer", "CKNetwork"});
 		
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GameObjects/Framework/Management/GameObjectsManager.h"
-#include "GameObjects/Framework/Base/ActivatorBase.h"
-#include "GameObjects/Interactive/Physics/Ball.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Management/GameObjectsManager.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/ActivatorBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Interactive/Physics/Ball.h"
 #include "Kismet/GameplayStatics.h"
-#include "Network/Services/GameData/GameObjectsServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/GameObjectsServiceSubsystem.h"
 
 
 // Sets default values

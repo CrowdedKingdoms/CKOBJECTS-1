@@ -6,11 +6,11 @@
 #include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
-#include "Shared/Types/Interfaces/World/OriginRebasable.h"
+#include "CKTypes/Public/Shared/Types/Interfaces/World/OriginRebasable.h"
 #include "Ball.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API ABall : public AActor, public IOriginRebasable
+class ABall : public AActor, public IOriginRebasable
 {
 	GENERATED_BODY()
 

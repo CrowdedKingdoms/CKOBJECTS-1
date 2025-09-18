@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GameObjects/Interactive/Physics/Ball.h"
+#include "CKNetwork/Pubilc/GameObjects/Interactive/Physics/Ball.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
 #include "Shared/Types/Interfaces/Interaction/Activatable.h"

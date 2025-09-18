@@ -7,8 +7,8 @@
 #include "Engine/World.h"
 #include "Shared/Types/Core/Common.h"
 #include <limits>
-#include "Network/Services/GameData/ChunkServiceSubsystem.h"
-#include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
 #include "Voxels/Data/VoxelDataManager.h"
 #include "Voxels/Rendering/ChunkDataManager.h"
 #include "Voxels/Rendering/VLOMeshProvider.h"

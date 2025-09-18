@@ -8,7 +8,7 @@ public class CKVoxelSystem : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" ,"CKSharedTypes"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "ProceduralMeshComponent", "CKSharedTypes", "CKTypes", "CKPlayer", "CKNetwork"  });
 		
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

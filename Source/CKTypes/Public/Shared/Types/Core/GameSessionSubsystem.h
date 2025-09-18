@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Shared/Types/Enums/Network/MessageType.h"
 #include "UObject/Object.h"
 #include "Containers/Queue.h"
 #include "HAL/Runnable.h"
@@ -17,7 +16,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnGraphUpdated);
  */
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UGameSessionSubsystem : public UGameInstanceSubsystem
+class UGameSessionSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 

@@ -3,9 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Shared/Types/Structures/Actors/FActorState.h"
-#include "Shared/Types/Structures/Actors/FActorUpdateStruct.h"
-#include "Player/NonAuthClients/NPC_Manager.h"
+#include "CKTypes/Public/Shared/Types/Structures/Actors/FActorState.h"
+#include "CKTypes/Public/Shared/Types/Structures/Actors/FActorUpdateStruct.h"
+#include "CKPlayer/Public/Player/NonAuthClients/NPC_Manager.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 #include "ActorServiceSubsystem.generated.h"
 

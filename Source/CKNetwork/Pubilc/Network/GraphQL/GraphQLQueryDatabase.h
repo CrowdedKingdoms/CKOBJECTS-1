@@ -21,7 +21,7 @@
  * It is part of the CROWDROCKS_API module.
  */
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API UGraphQLQueryDatabase : public UDataAsset
+class UGraphQLQueryDatabase : public UDataAsset
 {
 	GENERATED_BODY()
 

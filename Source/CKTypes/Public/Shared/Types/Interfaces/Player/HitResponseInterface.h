@@ -13,7 +13,7 @@ class UHitResponseInterface : public UInterface
 	GENERATED_BODY()
 };
 
-class CROWDEDKINGDOMS_API IHitResponseInterface
+class IHitResponseInterface
 {
 	GENERATED_BODY()
 

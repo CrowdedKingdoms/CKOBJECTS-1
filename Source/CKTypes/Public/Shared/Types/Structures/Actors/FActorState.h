@@ -1,9 +1,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Shared/Types/Enums/Character/EActionType.h"
-#include "Shared/Types/Enums/Character/ECharacterType.h"
-#include "Shared/Types/Enums/Character/EGait.h"
+#include "CKTypes/Public/Shared/Types/Enums/Character/EActionType.h"
+#include "CKTypes/Public/Shared/Types/Enums/Character/ECharacterType.h"
+#include "CKTypes/Public/Shared/Types/Enums/Character/EGait.h"
 #include "GameFramework/Character.h"
 #include "FActorState.generated.h"
 

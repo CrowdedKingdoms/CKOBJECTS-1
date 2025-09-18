@@ -4,12 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Shared/Types/Interfaces/World/OriginRebasable.h"
-#include "Shared/Types/Structures/GameObjects/FGameObjectState.h"
+#include "CKTypes/Public/Shared/Types/Interfaces/World/OriginRebasable.h"
+#include "CKTypes/Public/Shared/Types/Structures/GameObjects/FGameObjectState.h"
 #include "GameObjectBase.generated.h"
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API AGameObjectBase : public AActor, public IOriginRebasable
+class AGameObjectBase : public AActor, public IOriginRebasable
 {
 	GENERATED_BODY()
 

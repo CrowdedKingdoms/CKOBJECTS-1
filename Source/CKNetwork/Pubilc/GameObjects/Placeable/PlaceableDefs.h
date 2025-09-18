@@ -27,7 +27,7 @@ struct FGameObjectUIEntry
 
 /** Base definition for a placeable game object */
 UCLASS(Abstract, BlueprintType, EditInlineNew, DefaultToInstanced)
-class CROWDEDKINGDOMS_API UGameObjectDef : public UObject
+class UGameObjectDef : public UObject
 {
 	GENERATED_BODY()
 
@@ -55,7 +55,7 @@ public:
 
 /** Static mesh entry. Will be spawned as HISM instance(s). */
 UCLASS(BlueprintType, EditInlineNew)
-class CROWDEDKINGDOMS_API UGameObjectStaticMeshDef : public UGameObjectDef
+class UGameObjectStaticMeshDef : public UGameObjectDef
 {
 	GENERATED_BODY()
 
@@ -83,7 +83,7 @@ public:
 
 /** Actor entry. Will spawn an independent actor (BP or C++). */
 UCLASS(BlueprintType, EditInlineNew)
-class CROWDEDKINGDOMS_API UGameObjectActorDef : public UGameObjectDef
+class UGameObjectActorDef : public UGameObjectDef
 {
 	GENERATED_BODY()
 
@@ -110,7 +110,7 @@ public:
 
 /** A BP-editable catalog you can fill with any number of entries */
 UCLASS(BlueprintType)
-class CROWDEDKINGDOMS_API UGameObjectCatalog : public UPrimaryDataAsset
+class UGameObjectCatalog : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 

@@ -7,7 +7,7 @@
  * A thread-safe circular buffer implementation for storing audio data
  * Provides fixed-capacity FIFO operations with automatic overwrite of oldest data
  */
-class CROWDEDKINGDOMS_API FCircularAudioBuffer
+class FCircularAudioBuffer
 {
 public:
     /**

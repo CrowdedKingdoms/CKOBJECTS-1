@@ -14,7 +14,7 @@
  * 
  */
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UCKGameInstance : public UGameInstance
+class UCKGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 

@@ -26,7 +26,7 @@ DECLARE_LOG_CATEGORY_EXTERN(NetworkMessageParser, Log, All);
  */
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UNetworkMessageParser : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UNetworkMessageParser : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

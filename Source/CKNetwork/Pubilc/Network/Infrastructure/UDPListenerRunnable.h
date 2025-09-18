@@ -8,7 +8,7 @@ class UUDPSubsystem;
 /**
  * 
  */
-class CROWDEDKINGDOMS_API FUDPListenerRunnable : public FRunnable
+class FUDPListenerRunnable : public FRunnable
 {
 public:
 	FUDPListenerRunnable(FSocket* InSocket, UUDPSubsystem* InOwner);

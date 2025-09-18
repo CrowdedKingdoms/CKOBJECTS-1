@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Shared/Types/Structures/Actors/FActorState.h"
+#include "CKTypes/Public/Shared/Types/Structures/Actors/FActorState.h"
 #include "GameFramework/Character.h"
-#include "Shared/Types/Enums/Character/ECharacterType.h"
-#include "Shared/Types/Interfaces/World/OriginRebasable.h"
-#include "Shared/Types/Structures/Actors/FActorUpdateStruct.h"
+#include "CKTypes/Public/Shared/Types/Enums/Character/ECharacterType.h"
+#include "CKTypes/Public/Shared/Types/Interfaces/World/OriginRebasable.h"
+#include "CKTypes/Public/Shared/Types/Structures/Actors/FActorUpdateStruct.h"
 #include "NPC_Manager.generated.h"
 
 class UVoxelWorldSubsystem;
@@ -18,7 +18,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUpdateNPC, FString, UUID, FVector,
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FActorTimeout, const FString&, UUID);
 
 UCLASS()
-class CROWDEDKINGDOMS_API ANPC_Manager : public AActor, public IOriginRebasable
+class ANPC_Manager : public AActor, public IOriginRebasable
 {
 	GENERATED_BODY()
 

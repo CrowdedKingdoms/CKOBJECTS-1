@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
-#include "Shared/Types/Structures/UserState/FUserState.h"
+#include "CKTypes/Public/Shared/Types/Structures/UserState/FUserState.h"
 #include "UserStateServiceSubsystem.generated.h"
 
 class UGraphQLService;
@@ -14,7 +14,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogUserStateService, Log, All);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnUserStateResponse, bool, bSuccess, FUserState, State);
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UUserStateServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UUserStateServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

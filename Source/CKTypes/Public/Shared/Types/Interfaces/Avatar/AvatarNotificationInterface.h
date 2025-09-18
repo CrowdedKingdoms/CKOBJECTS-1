@@ -18,7 +18,7 @@ class UAvatarNotificationInterface : public UInterface
 /**
  * 
  */
-class CROWDEDKINGDOMS_API IAvatarNotificationInterface
+class IAvatarNotificationInterface
 {
 	GENERATED_BODY()
 

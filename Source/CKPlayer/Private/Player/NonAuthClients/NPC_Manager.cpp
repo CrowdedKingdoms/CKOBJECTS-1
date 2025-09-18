@@ -8,7 +8,7 @@
 #include "Engine/StreamableManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/NonAuthClients/SkelotInstanceManager.h"
-#include "Voxels/Core/VoxelWorldSubsystem.h"
+#include "CKVoxelSystem/Public/Voxels/Core/VoxelWorldSubsystem.h"
 
 // Sets default values
 ANPC_Manager::ANPC_Manager()

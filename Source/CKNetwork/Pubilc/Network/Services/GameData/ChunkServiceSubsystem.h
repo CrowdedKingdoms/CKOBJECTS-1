@@ -4,7 +4,7 @@
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 #include "Shared/Types/Structures/Voxels//FChunkVoxelState.h"
-#include "Network/Services/GameData/CDNServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/GameData/CDNServiceSubsystem.h"
 #include "ChunkServiceSubsystem.generated.h"
 
 class UGameSessionSubsystem;
@@ -21,7 +21,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_SixParams(FOnChunkLoadedResponse, bool, bSucc
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnChunkUpdatedResponse, bool, bSuccess, int64, X, int64, Y, int64, Z);
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API UChunkServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
+class UChunkServiceSubsystem : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Components/BoxComponent.h"
-#include "GameObjects/Framework/Base/ActivatorBase.h"
+#include "CKNetwork/Pubilc/GameObjects/Framework/Base/ActivatorBase.h"
 #include "CheckpointActivator.generated.h"
 
 UCLASS()
-class CROWDEDKINGDOMS_API ACheckpointActivator : public AActivatorBase
+class ACheckpointActivator : public AActivatorBase
 {
 	GENERATED_BODY()
 

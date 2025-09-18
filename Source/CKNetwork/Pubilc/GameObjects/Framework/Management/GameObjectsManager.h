@@ -4,9 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Shared/Types/Structures/Events/FBaseEventState.h"
-#include "Shared/Types/Structures/GameObjects/FGameObjectState.h"
-#include "Shared/Types/Enums/Events/EEventType.h"
+#include "CKTypes/Public/Shared/Types/Structures/Events/FBaseEventState.h"
+#include "CKTypes/Public/Shared/Types/Structures/GameObjects/FGameObjectState.h"
+#include "CKTypes/Public/Shared/Types/Enums/Events/EEventType.h"
 #include "GameObjectsManager.generated.h"
 
 
@@ -17,7 +17,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnGameObjectActivationNotification
 DECLARE_MULTICAST_DELEGATE_TwoParams(FOnBallEventReceived, const FString&, const FBallState&);
 
 UCLASS(Blueprintable, BlueprintType)
-class CROWDEDKINGDOMS_API AGameObjectsManager : public AActor
+class AGameObjectsManager : public AActor
 {
 	GENERATED_BODY()
 

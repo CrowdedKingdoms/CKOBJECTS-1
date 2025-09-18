@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "GameObjects/Interactive/Gameplay/GO_Checkpoint.h"
+#include "CKNetwork/Pubilc/GameObjects/Interactive/Gameplay/GO_Checkpoint.h"
 #include "GameFramework/Character.h"
 
 // Sets default values

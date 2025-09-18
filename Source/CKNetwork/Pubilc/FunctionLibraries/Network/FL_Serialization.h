@@ -20,7 +20,7 @@ THIRD_PARTY_INCLUDES_END
  * 
  */
 UCLASS()
-class CROWDEDKINGDOMS_API UFL_Serialization : public UBlueprintFunctionLibrary
+class UFL_Serialization : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 

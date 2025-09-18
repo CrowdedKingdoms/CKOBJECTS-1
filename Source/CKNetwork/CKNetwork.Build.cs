@@ -8,10 +8,10 @@ public class CKNetwork : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine"});
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "AudioCapture", "AudioCaptureCore", "AudioMixer", "Voice", "OpenSSL", "libOpus", "Sockets", "Networking", "HTTP", "Json", "CKSharedTypes"});
 		
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "CKTypes" });
+		PrivateDependencyModuleNames.AddRange(new string[] { });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

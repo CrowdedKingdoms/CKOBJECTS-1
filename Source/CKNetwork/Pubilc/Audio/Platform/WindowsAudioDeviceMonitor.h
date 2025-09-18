@@ -26,7 +26,7 @@ class FWindowsAudioDeviceNotificationClient;
 #endif
 
 UCLASS(ClassGroup=(Audio))
-class CROWDEDKINGDOMS_API AWindowsAudioDeviceMonitor : public AActor
+class AWindowsAudioDeviceMonitor : public AActor
 {
     GENERATED_BODY()
 

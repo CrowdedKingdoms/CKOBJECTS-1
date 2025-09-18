@@ -10,6 +10,6 @@ public class CKOBJECTSEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 
-		ExtraModuleNames.AddRange( new string[] { "CKOBJECTS" } );
+		ExtraModuleNames.AddRange( new string[] { "CKOBJECTS", "CKVoxelSystem", "CKNetwork", "CKPlayer", "CKTypes"  } );
 	}
 }

@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "Network/Services/User/UserStateServiceSubsystem.h"
-#include "Network/Services/User/UserServiceSubsystem.h"
-#include "Network/GraphQL/GraphQLService.h"
+#include "CKNetwork/Pubilc/Network/Services/User/UserStateServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/Services/User/UserServiceSubsystem.h"
+#include "CKNetwork/Pubilc/Network/GraphQL/GraphQLService.h"
 
 DEFINE_LOG_CATEGORY(LogUserStateService);
 
