@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "CoreMinimal.h"
-#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
+#include "FunctionLibraries/Network/FL_Serialization.h"
 #include "FTextChatOptions.generated.h"
 
 USTRUCT(BlueprintType)

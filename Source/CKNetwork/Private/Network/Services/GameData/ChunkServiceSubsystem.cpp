@@ -1,14 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
-#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "Network/Services/GameData/ChunkServiceSubsystem.h"
 
-#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
+#include "FunctionLibraries/Network/FL_Serialization.h"
 #include "Shared/Types/Structures/Voxels/FChunkVoxelState.h"
-#include "CKNetwork/Pubilc/Network/GraphQL/GraphQLService.h"
+#include "Network/GraphQL/GraphQLService.h"
 #include "Shared/Types/Core/GameSessionSubsystem.h"
-#include "CKVoxelSystem/Public/Voxels/Data/VoxelDataManager.h"
+#include "Voxels/Data/VoxelDataManager.h"
 #include "Shared/Types/Structures/Chunks/FChunkDataContainer.h"
 #include "Shared/Types/Structures/Voxels/FChunkData.h"
-#include "CKVoxelSystem/Public/Voxels/Rendering/ChunkDataManager.h"
+#include "Voxels/Rendering/ChunkDataManager.h"
 
 DEFINE_LOG_CATEGORY(LogChunkService);
 

@@ -2,8 +2,6 @@
 
 
 #include "Voxels/Rendering/VoxelMeshProvider.h"
-
-#include "Shared/Types/Enums/Voxels/EVoxelType.h"
 #include "Voxels/Core/VoxelChunk.h"
 
 DEFINE_LOG_CATEGORY(LogVoxelMeshProvider);

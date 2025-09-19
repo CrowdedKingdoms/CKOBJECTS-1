@@ -6,14 +6,15 @@
 #include "GameFramework/Actor.h"
 #include "ProceduralMeshComponent.h"
 #include "Components/TextRenderComponent.h"
-#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelListItem.h"
-#include "CKSharedTypes/Public/Shared/Types/Structures/Voxels/FVoxelState.h"
-#include "CKSharedTypes/Public/Shared/Types/Structures/Voxels/FChunkVoxelState.h"
+#include "Shared/Types/Structures/Voxels/FVoxelListItem.h"
+#include "Shared/Types/Structures/Voxels/FVoxelState.h"
+#include "Shared/Types/Structures/Voxels/FChunkVoxelState.h"
+#include "Shared/Types/Enums/Voxels/EVoxelType.h"
 #include "Components/InstancedStaticMeshComponent.h"
-#include "CKTypes/Public/Shared/Types/Interfaces/World/OriginRebasable.h"
-#include "CKTypes/Public/Shared/Types/Structures/Chunks/FChunkDataContainer.h"
-#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelCoordinate.h"
-#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelDefinition.h"
+#include "Shared/Types/Interfaces/World/OriginRebasable.h"
+#include "Shared/Types/Structures/Chunks/FChunkDataContainer.h"
+#include "Shared/Types/Structures/Voxels/FVoxelCoordinate.h"
+#include "Shared/Types/Structures/Voxels/FVoxelDefinition.h"
 #include "VoxelChunk.generated.h"
 
 class AAtlasManager;
@@ -25,7 +26,7 @@ DECLARE_LOG_CATEGORY_EXTERN(LogVoxelChunk, Log, All);
 
 
 UCLASS(Blueprintable, BlueprintType)
-class AVoxelChunk : public AActor, public IOriginRebasable
+class   AVoxelChunk : public AActor, public IOriginRebasable
 {
 	GENERATED_BODY()
 	

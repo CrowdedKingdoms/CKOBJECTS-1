@@ -1,15 +1,14 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "CKNetwork/Pubilc/Network/Services/GameData/CDNServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/NetworkMessageParser.h"
+#include "Network/Services/GameData/CDNServiceSubsystem.h"
+#include "Network/Infrastructure/NetworkMessageParser.h"
 #include "HttpModule.h"
-#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
+#include "FunctionLibraries/Network/FL_Serialization.h"
 #include "Interfaces/IHttpResponse.h"
-#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Network/Services/GameData/VoxelServiceSubsystem.h"
 #include "Shared/Types/Core/GameSessionSubsystem.h"
-#include "CKVoxelSystem/Public/Voxels/Data/VoxelDataManager.h"
-#include "CKVoxelSystem/Public/Voxels/Rendering/ChunkDataManager.h"
-#include "Shared/Types/Structures/Voxels/FChunkVoxelState.h"
+#include "Voxels/Data/VoxelDataManager.h"
+#include "Voxels/Rendering/ChunkDataManager.h"
 
 
 DEFINE_LOG_CATEGORY(LogCDNService);

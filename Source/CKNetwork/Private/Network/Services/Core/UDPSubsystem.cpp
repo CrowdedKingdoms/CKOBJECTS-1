@@ -1,15 +1,15 @@
-#include "CKNetwork/Pubilc/Network/Services/Core/UDPSubsystem.h"
+#include "Network/Services/Core/UDPSubsystem.h"
 
 #include <chrono>
 
 #include "Sockets.h"
 #include "SocketSubsystem.h"
-#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/NetworkMessageParser.h"
-#include "CKTypes/Public/Shared/Types/Core/GameSessionSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/MessageBufferPoolSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/UDPListenerRunnable.h"
-#include "CKTypes/Public/Shared/Types/Enums/Network/MessageType.h"
+#include "FunctionLibraries/Network/FL_Serialization.h"
+#include "Network/Infrastructure/NetworkMessageParser.h"
+#include "Shared/Types/Core/GameSessionSubsystem.h"
+#include "Network/Infrastructure/MessageBufferPoolSubsystem.h"
+#include "Network/Infrastructure/UDPListenerRunnable.h"
+#include "Shared/Types/Enums/Network/MessageType.h"
 
 
 DEFINE_LOG_CATEGORY(LogUDPService);

@@ -13,7 +13,7 @@ class UHitResponseInterface : public UInterface
 	GENERATED_BODY()
 };
 
-class IHitResponseInterface
+class   IHitResponseInterface
 {
 	GENERATED_BODY()
 

@@ -18,7 +18,7 @@ class UActivatable : public UInterface
 /**
  * Will be used for detection of interactable objects in the game.
  */
-class IActivatable
+class   IActivatable
 {
 	GENERATED_BODY()
 

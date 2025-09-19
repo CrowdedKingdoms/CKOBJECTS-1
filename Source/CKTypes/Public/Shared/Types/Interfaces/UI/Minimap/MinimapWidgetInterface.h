@@ -16,7 +16,7 @@ class UMinimapWidgetInterface : public UInterface
 /**
  * 
  */
-class IMinimapWidgetInterface
+class   IMinimapWidgetInterface
 {
 	GENERATED_BODY()
 

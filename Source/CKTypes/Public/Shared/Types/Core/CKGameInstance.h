@@ -14,7 +14,7 @@
  * 
  */
 UCLASS(Blueprintable, BlueprintType)
-class UCKGameInstance : public UGameInstance
+class   UCKGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 

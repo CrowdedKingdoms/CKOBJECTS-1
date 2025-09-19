@@ -18,7 +18,7 @@ class UAvatarNotificationInterface : public UInterface
 /**
  * 
  */
-class IAvatarNotificationInterface
+class   IAvatarNotificationInterface
 {
 	GENERATED_BODY()
 

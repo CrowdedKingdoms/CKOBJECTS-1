@@ -16,7 +16,7 @@ class UPlayerInterface : public UInterface
 /**
  * 
  */
-class IPlayerInterface
+class   IPlayerInterface
 {
 	GENERATED_BODY()
 

@@ -1,14 +1,13 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-#include "CKNetwork/Pubilc/Network/Services/GameData/ActorServiceSubsystem.h"
+#include "Network/Services/GameData/ActorServiceSubsystem.h"
 #include "EngineUtils.h"
-#include "CKNetwork/Pubilc/Network/Services/Core/UDPSubsystem.h"
-#include "CKTypes/Public/Shared/Types/Core/GameSessionSubsystem.h"
-#include "CKNetwork/Pubilc/FunctionLibraries/Network/FL_Serialization.h"
-#include "CKPlayer/Public/Player/NonAuthClients/NPC_Manager.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/NetworkMessageParser.h"
+#include "FunctionLibraries/Network/FL_Serialization.h"
+#include "Player/NonAuthClients/NPC_Manager.h"
+#include "Network/Infrastructure/NetworkMessageParser.h"
+#include "Network/Services/Core/UDPSubsystem.h"
 #include "Shared/Types/Core/GameSessionSubsystem.h"
-#include "Shared/Types/Structures/Actors/FActorUpdateStruct.h"
+
 
 void UActorServiceSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {

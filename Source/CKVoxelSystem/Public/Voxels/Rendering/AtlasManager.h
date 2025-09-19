@@ -10,7 +10,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAtlasLoaded, UTexture*, Atlas);
 
 UCLASS(Blueprintable, BlueprintType)
-class AAtlasManager : public AActor
+class   AAtlasManager : public AActor
 {
 	GENERATED_BODY()
 

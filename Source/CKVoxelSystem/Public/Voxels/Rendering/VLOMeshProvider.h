@@ -9,7 +9,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(LogVLOMeshProvider, Log, All);
 
 UCLASS(Blueprintable, BlueprintType)
-class AVLOMeshProvider : public AActor
+class   AVLOMeshProvider : public AActor
 {
 	GENERATED_BODY()
 

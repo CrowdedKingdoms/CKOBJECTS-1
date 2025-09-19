@@ -1,10 +1,10 @@
-﻿#include "CKNetwork/Pubilc/Network/Infrastructure/WorkerThreadsSubsystem.h"
-#include "CKTypes/Public/Shared/Types/Core/GameSessionSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/MessageBufferPoolSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/NetworkMessageParser.h"
-#include "CKNetwork/Pubilc/Network/Services/Core/UDPSubsystem.h"
+﻿#include "Network/Infrastructure/WorkerThreadsSubsystem.h"
+#include "Shared/Types/Core/GameSessionSubsystem.h"
+#include "Network/Infrastructure/MessageBufferPoolSubsystem.h"
+#include "Network/Infrastructure/NetworkMessageParser.h"
+#include "Network/Services/Core/UDPSubsystem.h"
 #include "Async/Async.h"
-#include "Public/Threads/FWorker.h"
+#include "Threads/FWorker.h"
 
 
 void UWorkerThreadsSubsystem::Initialize(FSubsystemCollectionBase& Collection)

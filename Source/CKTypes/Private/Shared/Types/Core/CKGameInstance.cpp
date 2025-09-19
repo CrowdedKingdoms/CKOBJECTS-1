@@ -2,7 +2,7 @@
 
 
 #include "Shared/Types/Core/CKGameInstance.h"
-#include "CKNetwork/Pubilc/Network/Services/User/UserStateServiceSubsystem.h"
+#include "Network/Services/User/UserStateServiceSubsystem.h"
 
 #ifndef CK_VERSION_MAJOR
 #define CK_VERSION_MAJOR 0

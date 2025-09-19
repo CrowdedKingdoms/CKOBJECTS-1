@@ -1,18 +1,18 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "CKNetwork/Pubilc/Network/GraphQL/GraphQLService.h"
+#include "Network/GraphQL/GraphQLService.h"
 #include "HttpModule.h"
-#include "CKPlayer/Public/Player/Avatar//AvatarDataManager.h"
+#include "Player/Avatar//AvatarDataManager.h"
 #include "Interfaces/IHttpRequest.h"
 #include "Interfaces/IHttpResponse.h"
-#include "CKNetwork/Pubilc/Network/Infrastructure/QueryMessageParser.h"
+#include "Network/Infrastructure/QueryMessageParser.h"
 #include "Shared/Types/Enums/Network/QueryResponseType.h"
-#include "CKNetwork/Pubilc/Network/Services/User/UserServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Services/User/UserStateServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Services/Core/UDPSubsystem.h"
+#include "Network/Services/User/UserServiceSubsystem.h"
+#include "Network/Services/User/UserStateServiceSubsystem.h"
+#include "Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Network/Services/Core/UDPSubsystem.h"
 #include "Async/Async.h"
 
 DEFINE_LOG_CATEGORY(LogGraphQLService);

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelCoordinate.h"
-#include "CKTypes/Public/Shared/Types/Structures/Voxels/FVoxelDefinition.h"
+#include "Shared/Types/Structures/Voxels/FVoxelCoordinate.h"
+#include "Shared/Types/Structures/Voxels/FVoxelDefinition.h"
 #include "FChunkDataContainer.generated.h"
 
 USTRUCT(BlueprintType)

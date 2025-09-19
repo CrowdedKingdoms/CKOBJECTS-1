@@ -5,10 +5,12 @@
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
 #include "Shared/Types/Structures/Voxels/FChunkVoxelState.h"
+#include "Shared/Types/Structures/Voxels/FVoxelListItem.h"
 #include "UObject/Object.h"
-#include "CKNetwork/Pubilc/Network/Services/GameData/ChunkServiceSubsystem.h"
-#include "CKNetwork/Pubilc/Network/Services/GameData/VoxelServiceSubsystem.h"
-#include "CKTypes/Public/Shared/Types/Structures/Chunks/FChunkDataContainer.h"
+#include "Network/Services/GameData/ChunkServiceSubsystem.h"
+#include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Network/Services/GameData/CDNServiceSubsystem.h"
+#include "Shared/Types/Structures/Chunks/FChunkDataContainer.h"
 #include "VoxelDataManager.generated.h"
 
 
@@ -28,7 +30,7 @@ struct FVoxelDataState
  *  This class handles the chunk voxel data receiving and processing logic.
  */
 UCLASS(blueprintable, BlueprintType)
-class UVoxelDataManager : public UGameInstanceSubsystem, public ISubsystemInitializable
+class   UVoxelDataManager : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 

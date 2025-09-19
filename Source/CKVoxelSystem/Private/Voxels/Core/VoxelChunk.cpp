@@ -1,13 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Voxels/Core/VoxelChunk.h"
-#include "CKNetwork/Pubilc/GameObjects/Placeable/PlaceableObjectManager.h"
+#include "GameObjects/Placeable/PlaceableObjectManager.h"
 #include "Containers/Array.h"
 #include "Voxels/Rendering/AtlasManager.h"
 #include "Shared/Types/Structures/Voxels/FChunkVoxelState.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
-#include "Shared/Types/Enums/Voxels/EVoxelType.h"
 #include "Voxels/Rendering/VLOMeshProvider.h"
 
 DEFINE_LOG_CATEGORY(LogVoxelChunk);

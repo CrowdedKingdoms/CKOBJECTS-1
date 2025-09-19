@@ -3,7 +3,7 @@
 
 #include "CoreMinimal.h"
 #include "Shared/Types/Interfaces/Subsystems/SubsystemInitializable.h"
-#include "CKTypes/Public/Shared/Types/Structures/Chunks/FChunkDataContainer.h"
+#include "Shared/Types/Structures/Chunks/FChunkDataContainer.h"
 #include "ChunkDataManager.generated.h"
 
 class UCDNServiceSubsystem;
@@ -34,7 +34,7 @@ struct FChunkDataState
 };
 
 UCLASS(Blueprintable, BlueprintType)
-class UChunkDataManager : public UGameInstanceSubsystem, public ISubsystemInitializable
+class   UChunkDataManager : public UGameInstanceSubsystem, public ISubsystemInitializable
 {
 	GENERATED_BODY()
 
