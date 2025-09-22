@@ -17,7 +17,7 @@ public class CKOBJECTS : ModuleRules
 		
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
-			"CKVoxelSystem"
+
 		});
 		
 		bUseUnity = false;

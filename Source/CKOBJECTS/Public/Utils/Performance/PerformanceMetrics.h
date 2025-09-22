@@ -20,7 +20,7 @@
 #include "PerformanceMetrics.generated.h"
 
 UCLASS()
-class   APerformanceMetrics : public AActor
+class  APerformanceMetrics : public AActor
 {
 	GENERATED_BODY()
 

@@ -6,7 +6,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(LogAssimp, Log, All);
 
 UCLASS()
-class   UAssimpImporter : public UBlueprintFunctionLibrary
+class  UAssimpImporter : public UBlueprintFunctionLibrary
 {
     GENERATED_BODY()
 

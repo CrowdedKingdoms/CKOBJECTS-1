@@ -8,7 +8,7 @@
 DECLARE_LOG_CATEGORY_EXTERN(LogAssimpModel, Log, All);
 
 UCLASS()
-class   AImportedModelActor : public AActor
+class  AImportedModelActor : public AActor
 {
     GENERATED_BODY()
 

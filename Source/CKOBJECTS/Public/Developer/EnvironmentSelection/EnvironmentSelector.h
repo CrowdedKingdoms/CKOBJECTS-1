@@ -15,7 +15,7 @@
  * configurations during application execution.
  */
 UCLASS(BlueprintType)
-class   UEnvironmentSelector : public UGameInstanceSubsystem
+class  UEnvironmentSelector : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 

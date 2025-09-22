@@ -11,8 +11,7 @@ public class CKTypes : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
-			"Core", "CoreUObject", "Engine", "InputCore",  "CKSharedTypes", "OpenSSL", "libOpus",
-			"SignalProcessing", "UELibSampleRate", "Skelot", "Json", "JsonUtilities", "UMG"
+			"Core", "CoreUObject", "Engine", "InputCore", "CKSharedTypes"
 		});
 		
 
@@ -22,6 +21,5 @@ public class CKTypes : ModuleRules
 		
 		bUseUnity = false;
 		
-	
 	}
 }
