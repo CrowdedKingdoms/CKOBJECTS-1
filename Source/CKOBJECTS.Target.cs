@@ -12,6 +12,6 @@ public class CKOBJECTSTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 
-		ExtraModuleNames.AddRange( new string[] { "CKOBJECTS","CKVoxelSystem", "CKTypes" } );
+		ExtraModuleNames.AddRange( new string[] { "CKOBJECTS" } );
 	}
 }

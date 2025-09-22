@@ -10,14 +10,11 @@ public class CKOBJECTS : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 		PublicDependencyModuleNames.AddRange(new string[]
 		{
-			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "Sockets", "Networking", "HTTP",
-			"ProceduralMeshComponent", "OpenSSL", "libOpus", "AudioCapture", "AudioCaptureCore", "AudioMixer", "Voice",
-			"SignalProcessing", "UELibSampleRate", "Skelot", "Json", "JsonUtilities", "UMG", "CKSharedTypes"
+			"Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "ProceduralMeshComponent"
 		});
 		
 		PrivateDependencyModuleNames.AddRange(new string[]
 		{
-
 		});
 		
 		bUseUnity = false;
