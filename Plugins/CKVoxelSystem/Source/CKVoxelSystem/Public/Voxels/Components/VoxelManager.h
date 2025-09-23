@@ -35,6 +35,15 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelCore|Setup")
 	bool bEnableRotation = true;
 
+	UFUNCTION(BlueprintCallable, Category="Voxel Manager")
+	void ChunkVoxelManager();
+
+	UFUNCTION(BlueprintCallable, Category = "VoxelService")
+	void RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 Vx, int32 Vy, int32 Vz);
+
+
+	EVoxelType TypeOfVoxel;
+	
 protected:
 	virtual void BeginPlay() override;
 

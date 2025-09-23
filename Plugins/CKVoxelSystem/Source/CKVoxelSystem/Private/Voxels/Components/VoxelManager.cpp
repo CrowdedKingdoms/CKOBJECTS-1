@@ -110,3 +110,20 @@ bool UVoxelManager::InitializeVoxelSystem(
 }
 
 
+void UVoxelManager::ChunkVoxelManager()
+{
+    VoxelServiceSubsystem->OnVoxelUpdateResponse.AddDynamic(this, &UVoxelManager::RemoveVoxel);
+}
+
+void UVoxelManager::RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 Vx, int32 Vy, int32 Vz)
+{
+    AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
+    if (VoxelChunk)
+    {
+        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, int8(TypeOfVoxel));
+    }
+}
+
+
+
+
