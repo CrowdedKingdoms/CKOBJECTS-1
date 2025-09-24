@@ -7,6 +7,7 @@
 #include "Voxels/Components/VoxelPlacementComponent.h"
 #include "Voxels/Components/VoxelRotationComponent.h"
 #include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Voxels/Core/GhostPlacement.h"
 #include "Voxels/Core/VoxelWorldSubsystem.h"
 
 
@@ -21,35 +22,27 @@ void UVoxelManager::BeginPlay()
 	Super::BeginPlay();
 
 	// Cache owning character
-	Owner = Cast<ACharacter>(GetOwner());
-	if (!Owner.IsValid())
+	MyOwner = Cast<AActor>(GetOwner());
+	if (!MyOwner.IsValid())
 	{
 		UE_LOG(LogTemp, Warning, TEXT("VoxelFeatureCoreComponent: Owner is not a Character!"));
 		return;
 	}
-    
+
+    InitializeVoxelSystem();
 }
 
-bool UVoxelManager::InitializeVoxelSystem(
-    UVoxelServiceSubsystem* InService,
-    UVoxelWorldSubsystem* InWorld,
-    bool bEnablePlacementFeature,
-    bool bEnableRotationFeature
-)
+void UVoxelManager::InitializeVoxelSystem()
 {
-    if (!GetWorld() || !Owner.IsValid())
+    if (!GetWorld() || !MyOwner.IsValid())
     {
         UE_LOG(LogTemp, Warning, TEXT("VoxelManager: Initialize failed (no world or owner)."));
-        return false;
+        return;
     }
 
     // Resolve subsystems (manual or auto)
-    VoxelServiceSubsystem = InService ? InService : GetWorld()->GetGameInstance()->GetSubsystem<UVoxelServiceSubsystem>();
-    VoxelWorldSubsystem = InWorld ? InWorld : GetWorld()->GetSubsystem<UVoxelWorldSubsystem>();
-
-    // Store feature toggles
-    bEnablePlacement = bEnablePlacementFeature;
-    bEnableRotation  = bEnableRotationFeature;
+    VoxelServiceSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UVoxelServiceSubsystem>();
+    VoxelWorldSubsystem = GetWorld()->GetSubsystem<UVoxelWorldSubsystem>();
 
     // Update existing sub-feature refs
     if (PlacementComp)
@@ -67,7 +60,7 @@ bool UVoxelManager::InitializeVoxelSystem(
     if (bEnablePlacement && !PlacementComp)
     {
         PlacementComp = Cast<UVoxelPlacementComponent>(
-            Owner->AddComponentByClass(UVoxelPlacementComponent::StaticClass(), false, FTransform::Identity, false)
+            MyOwner->AddComponentByClass(UVoxelPlacementComponent::StaticClass(), false, FTransform::Identity, false)
         );
         if (PlacementComp)
         {
@@ -85,7 +78,7 @@ bool UVoxelManager::InitializeVoxelSystem(
     if (bEnableRotation && !RotationComp)
     {
         RotationComp = Cast<UVoxelRotationComponent>(
-            Owner->AddComponentByClass(UVoxelRotationComponent::StaticClass(), false, FTransform::Identity, false)
+            MyOwner->AddComponentByClass(UVoxelRotationComponent::StaticClass(), false, FTransform::Identity, false)
         );
         if (RotationComp)
         {
@@ -99,6 +92,13 @@ bool UVoxelManager::InitializeVoxelSystem(
         RotationComp = nullptr;
     }
 
+    if (bEnableGhostPreview && !GhostPreview && ExternalGhostMaterial)
+    {
+        GhostPreview = GetWorld()->SpawnActor<AGhostPlacement>(AGhostPlacement::StaticClass(), MyOwner->GetActorTransform());
+        GhostPreview->MyOwner = MyOwner;
+        GhostPreview->GhostMaterialReference = ExternalGhostMaterial;
+    }
+
     UE_LOG(LogTemp, Log,
         TEXT("VoxelManager: Initialized (Service=%s, World=%s, Placement=%s, Rotation=%s)"),
         *GetNameSafe(VoxelServiceSubsystem),
@@ -106,13 +106,13 @@ bool UVoxelManager::InitializeVoxelSystem(
         bEnablePlacement ? TEXT("Enabled") : TEXT("Disabled"),
         bEnableRotation ? TEXT("Enabled") : TEXT("Disabled"));
 
-    return true;
 }
 
 
 void UVoxelManager::ChunkVoxelManager()
 {
     VoxelServiceSubsystem->OnVoxelUpdateResponse.AddDynamic(this, &UVoxelManager::RemoveVoxel);
+    VoxelServiceSubsystem->OnNewVoxelUpdateNotification.AddDynamic(this, &UVoxelManager::OnNewVoxelUpdate);
 }
 
 void UVoxelManager::RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 Vx, int32 Vy, int32 Vz)
@@ -120,10 +120,29 @@ void UVoxelManager::RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 
     AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
     if (VoxelChunk)
     {
-        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, int8(TypeOfVoxel));
+        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, static_cast<uint8>(TypeOfVoxel));
     }
 }
 
+void UVoxelManager::OnNewVoxelUpdate(int64 Cx, int64 Cy, int64 Cz, int32 Vx, int32 Vy, int32 Vz, uint8 VoxelType, FVoxelState VoxelState, bool bHasState)
+{
+    AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(Cx, Cy, Cz);
+
+    if (bHasState)
+    {
+        VoxelChunk->UpdateVoxelWithState(Vx, Vy, Vz, VoxelType, VoxelState);
+    }
+    else
+    {
+        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, VoxelType);
+    }
+}
+
+
+void UVoxelManager::SetVoxelType(uint8 VoxelType)
+{
+    TypeOfVoxel = static_cast<EVoxelType>(VoxelType);
+}
 
 
 

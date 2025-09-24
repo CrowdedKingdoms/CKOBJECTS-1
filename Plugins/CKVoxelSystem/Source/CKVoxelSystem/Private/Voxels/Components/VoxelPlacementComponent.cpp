@@ -4,6 +4,7 @@
 #include "Voxels/Components/VoxelPlacementComponent.h"
 
 #include "GameFramework/Character.h"
+#include "Voxels/Components/VoxelManager.h"
 #include "Voxels/Core/VoxelWorldSubsystem.h"
 
 UVoxelPlacementComponent::UVoxelPlacementComponent()
@@ -17,9 +18,9 @@ void UVoxelPlacementComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Owner = Cast<AActor>(GetOwner());
+	MyOwner = Cast<AActor>(GetOwner());
 	
-	UE_LOG(LogTemp, Log, TEXT("VoxelPlacementComponent Activated: %s"), *Owner->GetName());
+	UE_LOG(LogTemp, Log, TEXT("VoxelPlacementComponent Activated: %s"), *MyOwner->GetName());
 }
 
 void UVoxelPlacementComponent::TickComponent(float DeltaTime, ELevelTick TickType,
@@ -36,9 +37,9 @@ FVector UVoxelPlacementComponent::GetLineTraceStartPoint() const
 {
 	FVector StartLocation = FVector::ZeroVector;
 	
-	if (IsValid(Owner.Get()))
+	if (IsValid(MyOwner.Get()))
 	{
-		StartLocation = Owner->GetActorLocation();
+		StartLocation = MyOwner->GetActorLocation();
         
 		StartLocation.Z += 50.0f;
 	}
@@ -49,9 +50,9 @@ FVector UVoxelPlacementComponent::GetLineTraceStartPoint() const
 
 float UVoxelPlacementComponent::CheckPlayerProximity(const FVector& HitLocation) const
 {
-	if (IsValid(Owner.Get()))
+	if (IsValid(MyOwner.Get()))
 	{
-		FVector PlayerLocation = Owner->GetActorLocation();
+		FVector PlayerLocation = MyOwner->GetActorLocation();
 
 		float Distance = FVector::Dist(PlayerLocation, HitLocation);
 
@@ -64,30 +65,58 @@ float UVoxelPlacementComponent::CheckPlayerProximity(const FVector& HitLocation)
 
 void UVoxelPlacementComponent::CreateVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ)
 {
-	if ( VoxelServiceSubsystem == nullptr || VoxelWorldSubsystem == nullptr)
+	if ( !VoxelServiceSubsystem || !VoxelWorldSubsystem || !VoxelManager)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("VoxelService or VoxelWorldSubsystem is not valid"));
+		UE_LOG(LogTemp, Warning, TEXT("VoxelService or VoxelWorldSubsystem or VoxelManager is not valid"));
 		return;
 	}
-	//TODO: 
-	// Getting the chunk manager
-	// AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
-	// if (VoxelChunk)
-	// {
-	//
-	// 	const uint8  VoxelChunk->GetVoxel(VoxelX, VoxelY, VoxelZ);
-	// 	
-	// }
-	// else
-	// {
-	// 	UE_LOG(LogTemp, Warning, TEXT("VoxelChunk is not valid"));
-	//
-	// 	TArray<FChunkVoxelState> VoxelState;
-	// 	VoxelWorldSubsystem->CreateVoxelChunk(ChunkX, ChunkY, ChunkZ, VoxelWorldSubsystem->GetFullArray(0), VoxelState);
-	// 	
-	// }
-	//
-	//
-	//
-	// VoxelChunk->UpdateVoxel(VoxelX, VoxelY, VoxelZ, int8(EVoxelType::RED));
+
+	AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
+	
+	if (IsValid(VoxelChunk))
+	{
+		uint8 TempVoxelType = VoxelChunk->GetVoxel(VoxelX, VoxelY, VoxelZ);
+		VoxelManager->SetVoxelType(TempVoxelType);
+		VoxelChunk->UpdateVoxel(VoxelX, VoxelY, VoxelZ, static_cast<uint8>(VoxelManager->CurrentVoxelType));
+	}
+	else
+	{
+		TArray<FChunkVoxelState> VoxelStates;
+		VoxelWorldSubsystem->CreateVoxelChunk(ChunkX, ChunkY, ChunkZ, VoxelWorldSubsystem->GetFullArray(0), VoxelStates);
+		CreateVoxel(ChunkX,ChunkY,ChunkZ,VoxelX,VoxelY,VoxelZ);
+	}
+}
+
+
+
+
+FVoxelState UVoxelPlacementComponent::CreateVLO(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ)
+{
+	if ( !VoxelServiceSubsystem || !VoxelWorldSubsystem || !VoxelManager)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("VoxelService or VoxelWorldSubsystem or VoxelManager is not valid"));
+		return FVoxelState();
+	}
+
+	AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
+	
+	if (IsValid(VoxelChunk))
+	{
+		uint8 TempVoxelType = VoxelChunk->GetVoxel(VoxelX, VoxelY, VoxelZ);
+		VoxelManager->SetVoxelType(TempVoxelType);
+		FVoxelState& TempVoxelState = VoxelChunk->GetVoxelState(VoxelX, VoxelY, VoxelZ);
+		TempVoxelState.Version = 5;
+		TempVoxelState.bIsVLO = true;
+		
+		VoxelChunk->UpdateVoxel(VoxelX, VoxelY, VoxelZ, static_cast<uint8>(VoxelManager->CurrentVoxelType));
+		
+		return TempVoxelState;
+	}
+	else
+	{
+		TArray<FChunkVoxelState> VoxelStates;
+		VoxelWorldSubsystem->CreateVoxelChunk(ChunkX, ChunkY, ChunkZ, VoxelWorldSubsystem->GetFullArray(0), VoxelStates);
+		CreateVLO(ChunkX,ChunkY,ChunkZ,VoxelX,VoxelY,VoxelZ);
+	}
+	return FVoxelState();
 }

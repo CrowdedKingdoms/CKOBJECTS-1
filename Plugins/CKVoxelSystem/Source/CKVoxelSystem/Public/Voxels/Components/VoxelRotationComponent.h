@@ -6,11 +6,11 @@
 // #include "Voxels/Core/VoxelWorldSubsystem.h"
 #include "VoxelRotationComponent.generated.h"
 
-class AVoxelChunk;
+class UVoxelManager;    
 class UVoxelServiceSubsystem;
 class UVoxelWorldSubsystem;
 
-UCLASS(ClassGroup=(VoxelFeature), meta=(BlueprintSpawnableComponent))
+UCLASS(ClassGroup=(VoxelFeature), Blueprintable, meta=(BlueprintSpawnableComponent))
 class UVoxelRotationComponent : public UActorComponent
 {
     GENERATED_BODY()
@@ -24,11 +24,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
     UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
 
-    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
+    UVoxelManager* VoxelManager = nullptr;
     
 protected:
     virtual void BeginPlay() override;
 
 private:
-    TWeakObjectPtr<AActor> Owner;
+    TWeakObjectPtr<AActor> MyOwner;
 };

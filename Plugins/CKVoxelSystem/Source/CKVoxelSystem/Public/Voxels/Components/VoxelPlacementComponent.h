@@ -7,12 +7,13 @@
 
 #include "VoxelPlacementComponent.generated.h"
 
+class UVoxelManager;
 class UVoxelServiceSubsystem;
 class UVoxelWorldSubsystem;
 
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
-class CKVOXELSYSTEM_API UVoxelPlacementComponent : public UActorComponent
+UCLASS(ClassGroup=(Custom), Blueprintable, meta=(BlueprintSpawnableComponent))
+class UVoxelPlacementComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
@@ -28,9 +29,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
 	UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
+	UVoxelManager* VoxelManager = nullptr;
 	
 	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
 	void CreateVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ);
+	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	FVoxelState CreateVLO(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ);
 	
 protected:
 	// Called when the game starts
@@ -43,7 +49,7 @@ public:
 
 private:
 
-	TWeakObjectPtr<AActor> Owner;
+	TWeakObjectPtr<AActor> MyOwner;
 	
 	FVector GetLineTraceStartPoint() const;
 	float CheckPlayerProximity(const FVector& HitLocation) const;

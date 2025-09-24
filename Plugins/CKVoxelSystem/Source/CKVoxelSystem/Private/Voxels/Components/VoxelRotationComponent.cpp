@@ -16,7 +16,7 @@ UVoxelRotationComponent::UVoxelRotationComponent()
 void UVoxelRotationComponent::BeginPlay()
 {
     Super::BeginPlay();
-    Owner = Cast<AActor>(GetOwner());
+    MyOwner = Cast<AActor>(GetOwner());
 	
-    UE_LOG(LogTemp, Log, TEXT("VoxelRotationComponent Activated: %s"), *Owner->GetName());
+    UE_LOG(LogTemp, Log, TEXT("VoxelRotationComponent Activated: %s"), *MyOwner->GetName());
 }
