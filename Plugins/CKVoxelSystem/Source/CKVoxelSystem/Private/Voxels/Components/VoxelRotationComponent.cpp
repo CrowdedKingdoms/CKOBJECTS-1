@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
+#include "FunctionLibraries/Generic/FL_Generic.h"
+#include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Voxels/Core/VoxelWorldSubsystem.h"
 
 
 UVoxelRotationComponent::UVoxelRotationComponent()
@@ -16,7 +19,12 @@ UVoxelRotationComponent::UVoxelRotationComponent()
 void UVoxelRotationComponent::BeginPlay()
 {
     Super::BeginPlay();
+    if (!GetWorld()) return;
+    
     MyOwner = Cast<AActor>(GetOwner());
+    VoxelServiceSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UVoxelServiceSubsystem>();
+    VoxelWorldSubsystem = GetWorld()->GetSubsystem<UVoxelWorldSubsystem>();
 	
-    UE_LOG(LogTemp, Log, TEXT("VoxelRotationComponent Activated: %s"), *MyOwner->GetName());
+    UE_LOG(LogTemp, Log, TEXT("VoxelRotationComponent Activated: Owner=%s, VoxelServiceSubsystem=%s, VoxelWorldSubsystem=%s"), *MyOwner->GetName(), *VoxelServiceSubsystem->GetName(), *VoxelWorldSubsystem->GetName());
+
 }

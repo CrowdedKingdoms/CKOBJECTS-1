@@ -7,7 +7,10 @@
 #include "Shared/Types/Enums/Voxels/EVoxelType.h"
 #include "VoxelManager.generated.h"
 
+
 class AGhostPlacement;
+class APlayerController;
+class AChunkVoxelManager;	
 class UVoxelWorldSubsystem;
 class UVoxelServiceSubsystem;
 class UVoxelPlacementComponent;
@@ -39,31 +42,45 @@ public:
 	bool bEnableGhostPreview = true;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager | Setup")
+	float Delta = 0.0005f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager | Material")
 	UMaterialInterface* ExternalGhostMaterial;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager | Values")
+	FName SelectedObjectId = FName("");
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager | Values")
+	float InteractRadios = 800.f;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager | Voxel")
 	EVoxelType CurrentVoxelType;
 
 	UFUNCTION(BlueprintCallable, Category="VoxelManager")
 	void InitializeVoxelSystem();
-
-	UFUNCTION(BlueprintCallable, Category="VoxelManager")	
-	void SetVoxelType(uint8 VoxelType);
-	
-	UFUNCTION(BlueprintCallable, Category="VoxelManager")
-	void ChunkVoxelManager();
-
-	UFUNCTION(BlueprintCallable, Category = "VoxelManager")
-	void RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 Vx, int32 Vy, int32 Vz);
-
-	UFUNCTION(BlueprintCallable, Category = "VoxelManager")
-	void OnNewVoxelUpdate(int64 Cx, int64 Cy, int64 Cz, int32 Vx, int32 Vy, int32 Vz, uint8 VoxelType, FVoxelState VoxelState, bool bHasState);
 	
 
+	UFUNCTION(BlueprintCallable, Category = "VoxelManager | Refs Get")
+	UVoxelPlacementComponent* GetVoxelPlacementComponentRef() { return  PlacementComp;}	
+	
+	UFUNCTION(BlueprintCallable, Category = "VoxelManager | Refs Get")
+	UVoxelRotationComponent* GetVoxelRotationComponentRef() { return  RotationComp;}	
+
+	UFUNCTION(BlueprintCallable, Category = "VoxelManager | Refs Get")
+	AGhostPlacement* GetGhostPlacementRef() { return  GhostPreview;}	
+	
+	UFUNCTION(BlueprintCallable, Category = "VoxelManager | Refs Get")
+	AChunkVoxelManager* GetChunkVoxelManagerRef() { return  ChunkVoxelManager;}
+
+	UFUNCTION(BlueprintCallable, Category = "VoxelManager | Refs Get")
+	APlayerController* GetPlayerControllerRef() { return  PlayerController;}
 	
 	
 protected:
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelManager")
+	APlayerController* PlayerController;
 
 private:
 	/** Cached owning character */
@@ -79,5 +96,7 @@ private:
 	UPROPERTY(Transient)
 	AGhostPlacement* GhostPreview;
 
-	EVoxelType TypeOfVoxel;
+	UPROPERTY(Transient)
+	AChunkVoxelManager* ChunkVoxelManager;
+	
 };

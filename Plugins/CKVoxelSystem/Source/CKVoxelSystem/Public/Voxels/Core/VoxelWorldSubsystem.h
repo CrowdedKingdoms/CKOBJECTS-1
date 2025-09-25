@@ -68,7 +68,6 @@ public:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	virtual void Deinitialize() override;
 
-
 	UFUNCTION(BlueprintCallable, Category = "Voxel World Controller")
 	void SetReferences(APawn* PawnReference, UTexture* DefaultAtlas);
 	

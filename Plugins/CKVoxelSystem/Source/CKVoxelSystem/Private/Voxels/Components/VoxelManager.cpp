@@ -7,6 +7,7 @@
 #include "Voxels/Components/VoxelPlacementComponent.h"
 #include "Voxels/Components/VoxelRotationComponent.h"
 #include "Network/Services/GameData/VoxelServiceSubsystem.h"
+#include "Voxels/Core/ChunkVoxelManager.h"
 #include "Voxels/Core/GhostPlacement.h"
 #include "Voxels/Core/VoxelWorldSubsystem.h"
 
@@ -28,7 +29,7 @@ void UVoxelManager::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("VoxelFeatureCoreComponent: Owner is not a Character!"));
 		return;
 	}
-
+    
     InitializeVoxelSystem();
 }
 
@@ -40,21 +41,9 @@ void UVoxelManager::InitializeVoxelSystem()
         return;
     }
 
-    // Resolve subsystems (manual or auto)
     VoxelServiceSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UVoxelServiceSubsystem>();
     VoxelWorldSubsystem = GetWorld()->GetSubsystem<UVoxelWorldSubsystem>();
-
-    // Update existing sub-feature refs
-    if (PlacementComp)
-    {
-        PlacementComp->VoxelServiceSubsystem = VoxelServiceSubsystem;
-        PlacementComp->VoxelWorldSubsystem = VoxelWorldSubsystem;
-    }
-    if (RotationComp)
-    {
-        RotationComp->VoxelServiceSubsystem = VoxelServiceSubsystem;
-        RotationComp->VoxelWorldSubsystem = VoxelWorldSubsystem;
-    }
+    
 
     // Placement
     if (bEnablePlacement && !PlacementComp)
@@ -62,11 +51,6 @@ void UVoxelManager::InitializeVoxelSystem()
         PlacementComp = Cast<UVoxelPlacementComponent>(
             MyOwner->AddComponentByClass(UVoxelPlacementComponent::StaticClass(), false, FTransform::Identity, false)
         );
-        if (PlacementComp)
-        {
-            PlacementComp->VoxelServiceSubsystem = VoxelServiceSubsystem;
-            PlacementComp->VoxelWorldSubsystem = VoxelWorldSubsystem;
-        }
     }
     else if (!bEnablePlacement && PlacementComp)
     {
@@ -80,11 +64,6 @@ void UVoxelManager::InitializeVoxelSystem()
         RotationComp = Cast<UVoxelRotationComponent>(
             MyOwner->AddComponentByClass(UVoxelRotationComponent::StaticClass(), false, FTransform::Identity, false)
         );
-        if (RotationComp)
-        {
-            RotationComp->VoxelServiceSubsystem = VoxelServiceSubsystem;
-            RotationComp->VoxelWorldSubsystem = VoxelWorldSubsystem;
-        }
     }
     else if (!bEnableRotation && RotationComp)
     {
@@ -99,6 +78,13 @@ void UVoxelManager::InitializeVoxelSystem()
         GhostPreview->GhostMaterialReference = ExternalGhostMaterial;
     }
 
+    if (!ChunkVoxelManager)
+    {
+        ChunkVoxelManager = GetWorld()->SpawnActor<AChunkVoxelManager>(AChunkVoxelManager::StaticClass(), MyOwner->GetActorTransform());
+        ChunkVoxelManager->MyOwner = MyOwner;
+    }
+    
+    
     UE_LOG(LogTemp, Log,
         TEXT("VoxelManager: Initialized (Service=%s, World=%s, Placement=%s, Rotation=%s)"),
         *GetNameSafe(VoxelServiceSubsystem),
@@ -109,40 +95,6 @@ void UVoxelManager::InitializeVoxelSystem()
 }
 
 
-void UVoxelManager::ChunkVoxelManager()
-{
-    VoxelServiceSubsystem->OnVoxelUpdateResponse.AddDynamic(this, &UVoxelManager::RemoveVoxel);
-    VoxelServiceSubsystem->OnNewVoxelUpdateNotification.AddDynamic(this, &UVoxelManager::OnNewVoxelUpdate);
-}
-
-void UVoxelManager::RemoveVoxel(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int32 Vx, int32 Vy, int32 Vz)
-{
-    AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(ChunkX, ChunkY, ChunkZ);
-    if (VoxelChunk)
-    {
-        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, static_cast<uint8>(TypeOfVoxel));
-    }
-}
-
-void UVoxelManager::OnNewVoxelUpdate(int64 Cx, int64 Cy, int64 Cz, int32 Vx, int32 Vy, int32 Vz, uint8 VoxelType, FVoxelState VoxelState, bool bHasState)
-{
-    AVoxelChunk* VoxelChunk = VoxelWorldSubsystem->GetChunk(Cx, Cy, Cz);
-
-    if (bHasState)
-    {
-        VoxelChunk->UpdateVoxelWithState(Vx, Vy, Vz, VoxelType, VoxelState);
-    }
-    else
-    {
-        VoxelChunk->UpdateVoxel(Vx, Vy, Vz, VoxelType);
-    }
-}
-
-
-void UVoxelManager::SetVoxelType(uint8 VoxelType)
-{
-    TypeOfVoxel = static_cast<EVoxelType>(VoxelType);
-}
 
 
 

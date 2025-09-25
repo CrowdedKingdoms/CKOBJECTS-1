@@ -19,16 +19,16 @@ public:
     UVoxelRotationComponent();
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
-    UVoxelServiceSubsystem* VoxelServiceSubsystem = nullptr;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
-    UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
-
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
     UVoxelManager* VoxelManager = nullptr;
     
 protected:
     virtual void BeginPlay() override;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
+    UVoxelServiceSubsystem* VoxelServiceSubsystem = nullptr;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelRotation")
+    UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
 
 private:
     TWeakObjectPtr<AActor> MyOwner;

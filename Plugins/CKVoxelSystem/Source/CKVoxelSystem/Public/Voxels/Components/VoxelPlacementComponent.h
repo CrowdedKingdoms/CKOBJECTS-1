@@ -20,14 +20,7 @@ class UVoxelPlacementComponent : public UActorComponent
 public:
 	// Sets default values for this component's properties
 	UVoxelPlacementComponent();
-
-	// In VoxelRotationComponent.h / VoxelPlacementComponent.h
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
-	UVoxelServiceSubsystem* VoxelServiceSubsystem = nullptr;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
-	UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
+	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
 	UVoxelManager* VoxelManager = nullptr;
@@ -38,14 +31,36 @@ public:
 	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
 	FVoxelState CreateVLO(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ);
 	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	FVoxelState CreateGameObject(int64 ChunkX, int64 ChunkY, int64 ChunkZ, int VoxelX, int VoxelY, int VoxelZ);
+	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void RemoveVoxelOrVLO(FVector Location);
+	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void RemoveObject(UInstancedStaticMeshComponent* ISMComponent, int32 InstanceIndex);
+
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void RemoveVoxel();
+
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void PlaceVoxel();
+	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void PlaceGameObject();
+	
+	UFUNCTION(BlueprintCallable, Category="VoxelPlacement")
+	void PlaceVLO();
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
-	                           FActorComponentTickFunction* ThisTickFunction) override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
+	UVoxelServiceSubsystem* VoxelServiceSubsystem = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="VoxelPlacement")
+	UVoxelWorldSubsystem* VoxelWorldSubsystem = nullptr;
 
 private:
 

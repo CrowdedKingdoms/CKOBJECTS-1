@@ -38,7 +38,7 @@ void AGhostPlacement::BeginPlay()
 		}
 	}
 
-	UE_LOG(LogTemp, Log, TEXT("AGhostPlacement Activated: "));
+	UE_LOG(LogTemp, Log, TEXT("AGhostPlacement Activated"));
 }
 
 void AGhostPlacement::Tick(float DeltaTime)
